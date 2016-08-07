@@ -30,6 +30,7 @@ $(document).ready(function () {
         $('#questions-ajax').html('');
         combos = [];
         $('#save-set').addClass('hidden');
+        $('#game-over2').css('transform', 'translateX(100%)');
     });
 
     $('.game-menu').on('click', function () {
