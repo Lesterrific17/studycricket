@@ -72,6 +72,7 @@ input[type="button"], input[type="submit"]{
     padding: 10px;
     box-sizing: border-box;
     z-index: 100;
+    overflow: auto;
 }
 
 
@@ -142,6 +143,20 @@ input[type="button"], input[type="submit"]{
     width: 230%;
     height: 230%;
     left: -20px;
+}
+#choose-challenge{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 25px 0px 25px 0px;
+    text-align: center;
+    background-color: rgba(255 ,255 ,255, 0.9);
+    width: 100%;
+    z-index: 200;
+    font-size: 2.3rem;
+    color: rgb(100 ,100, 100);
+    transform: translateY(-200px);
+    font-weight: bold;
 }
 #site-name{
     font-size: 3rem;
@@ -474,6 +489,7 @@ input[type="button"], input[type="submit"]{
     width: auto;
     height: 80px;
     overflow: hidden;
+    position: relative;
 }
 .chat-person:hover{
     background-color: rgb(240, 240, 240);
@@ -530,6 +546,23 @@ input[type="button"], input[type="submit"]{
 }
 .offline{
     background-color: gray;
+}
+.invite-checkbox{
+    position: absolute;
+    right: 20px;
+    height: 20px;
+    width: 20px;
+    top: 28px;
+}
+#invite-button{
+    width: 80%;
+    margin: auto;
+    display: block;
+    padding: 15px 0px 15px 0px;
+    color:  white;
+    border: none;
+    margin-top: 20px;
+    background-color: darkcyan;
 }
 
 #match-screen{

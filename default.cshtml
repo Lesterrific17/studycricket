@@ -7,15 +7,19 @@
     <script src="~/js/jquery.js"></script>
     <script src="~/js/script.js"></script>
     <script src="~/js/site.js"></script>
-    <script src="~/js/websocket.js"></script>
 </head>
 
 <body>
-
+    <audio id="cling" preload="auto" src="audio/cling.wav"></audio>
+    <audio id="tada" preload="auto"  src="audio/tada.wav"></audio>
+    <audio id="cricket" preload="auto"  src="audio/cricket.mp3"></audio>
 	<div id="site-content">
 		<div class="relatify">
 			<div id="user-content" style="background-image: url('img/coffee.jpg')">
 				<div id="ucontent-overlay">
+
+                    <div id="choose-challenge" class="animate3s">Choose a Reviewer</div>
+
 					<div id="site-id">
                         <div id="site-logo" class="icon-holder">
                             <img alt="logo" src="img/logo.png"/>
@@ -124,8 +128,6 @@
 
                         <div id="container"></div>
                     </div>
-                    
-
                 </div>
 
 			</div>
@@ -142,6 +144,7 @@
                         </div>
                         <div class="chat-person-name">Rubelito Abella
                         <br/><span class="chat-info">5 Question Sets made </span>
+                        <span><input class="invite-checkbox" type="checkbox" value=""/></span>
                         </div>
                     </div>
                     <div class="chat-person animate2s">
@@ -151,6 +154,7 @@
                         </div>
                         <div class="chat-person-name">Japheth Balane
                         <br/><span class="chat-info">7 Question Sets made </span>
+                        <span><input class="invite-checkbox" type="checkbox" value=""/></span>
                         </div>
                     </div>
                     <div class="chat-person animate2s">
@@ -160,6 +164,7 @@
                         </div>
                         <div class="chat-person-name">Czarina Rae
                         <br/><span class="chat-info">12 Question Sets made </span>
+                        <span><input class="invite-checkbox" type="checkbox" value=""/></span>
                         </div>
                     </div>
                     <div class="chat-person animate2s">
@@ -169,8 +174,10 @@
                         </div>
                         <div class="chat-person-name">Deneir "Putsop" Uyax
                         <br/><span class="chat-info">9 Question Sets made </span>
+                        <span><input class="invite-checkbox" type="checkbox" value=""/></span>
                         </div>
                     </div>
+                    <input type="button" id="invite-button" value="Invite To A Review">
                 </div>
                 
                 <div id="questions-ajax" class="animate4s">

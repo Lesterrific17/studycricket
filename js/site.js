@@ -15,6 +15,13 @@ $(document).ready(function () {
         $('#game-title').html($(this).data('name'));
         $('#questions-ajax').css('transform', 'translateX(-0%)');
         $('.game-menu-screen').css('transform', 'translateY(-0%)');
+        $('#plus-set, #site-id').css('opacity', '1');
+        $('#choose-challenge').css('transform', 'translateY(-200px)');
+    });
+
+    $('#invite-button').click(function () {
+        $('#plus-set, #site-id').css('opacity', '0.2');
+        $('#choose-challenge').css('transform', 'translateY(0px)');
     });
 
     $('.viewport-x').on('click', function () {

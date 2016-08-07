@@ -1,7 +1,15 @@
 
 /////////////////////////////////////////////////////////////////////
 
+var tadaSound = null;
+var clingSound = null;
+var cricketSound = null;
+
 $(document).ready(function () {
+
+    tadaSound = document.getElementById("tada");
+    clingSound = document.getElementById("cling");
+    cricketSound = document.getElementById("cricket");
 
     $("#add").click(function () {
         if ($("#question").val() != "" && $("#answer").val() != "" && isEditing != true && $('#question').val() != $('#answer').val()) {
@@ -355,6 +363,13 @@ function checkBanner(ch, msg){
     $('#check-banner').attr('class', ch);
     $('#check-banner').html(msg);
     $('#check-banner').fadeIn('1500');
+    if(ch == 'correct'){
+        clingSound.play();
+    }
+    else{
+        cricketSound.play();
+    }
+    
     flashDelay = setInterval(function () {
         $('#check-banner').fadeOut('1500');
         clearInterval(flashDelay);
@@ -365,6 +380,12 @@ function checkBanner2(ch, msg){
     $('#check-banner2').attr('class', ch);
     $('#check-banner2').html(msg);
     $('#check-banner2').fadeIn('1500');
+    if(ch == 'correct'){
+        clingSound.play();
+    }
+    else{
+        cricketSound.play();
+    }
     flashDelay = setInterval(function () {
         $('#check-banner2').fadeOut('1500');
         clearInterval(flashDelay);
@@ -376,6 +397,8 @@ function gameOver(score, maxscore){
     $('#game-over').css({'transform' : 'translateX(-0%)'});
     $('#stats').html('You answered ' + score + ' out of ' + maxscore + ' questions correctly!');
     $('#your-answer').blur();
+    tadaSound.play();
+
     var percent = score / maxscore;
     var starCount = Math.ceil((percent * 100) / 20);
     
@@ -401,6 +424,7 @@ function gameOver2(score, maxscore){
     $('#game-over2').css({'transform' : 'translateX(-0%)'});
     $('#stats2').html('You answered ' + score + ' out of ' + maxscore + ' questions correctly!');
     $('#your-answer').blur();
+    tadaSound.play();
     var percent = score / maxscore;
     var starCount = Math.ceil((percent * 100) / 20);
     
