@@ -37,7 +37,8 @@ $(document).ready(function () {
         $('#questions-ajax').css('transform', 'translateX(100%)');
         $('#game-over').css({ 'transform': 'translateX(100%)' });
         $('#stars').html('');
-
+        clingSound.pause();
+        cricketSound.pause();
     });
 
     $('#save-set').click(function () {
