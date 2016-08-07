@@ -1,0 +1,568 @@
+body, html{
+	margin: 0px;
+	padding: 0px;
+}
+
+body, textarea{
+	font-family: 'Segoe UI';
+	font-size: 20px;
+	color: rgb(80, 80, 80);
+}
+
+.hidden{
+    display: none;
+}
+
+input[type="button"], input[type="submit"]{
+	cursor: pointer;
+}
+
+.relatify{
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.float-bg{
+	//background-color: rgb(240, 240, 240);
+}
+
+#site-content{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+#user-content{
+	float: left;
+	height: 100%;
+	width: 75%;
+	position: relative;
+	overflow: hidden;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-image: url('../img/coffee.jpg');
+}
+#ucontent-overlay{
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5%;
+	box-sizing: border-box;
+    overflow: auto;
+}
+
+#mp-sidebar{
+	float: left;
+	height: 100%;
+	width: 25%;
+	background-color: white;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+}
+#questions-ajax{
+    position: absolute;
+    height:  100%;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    transform: translateX(100%);
+    padding: 10px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+
+.tile{
+	position: relative;
+	float: left;
+	height: 230px;
+	width: 230px;
+	margin: 5px;
+	opacity: 0.9;
+	cursor: pointer;
+	background-color: #446CB3;
+	padding: 15px;
+	box-sizing: border-box;
+	color: white;
+	-webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+.tile:hover{
+	opacity: 0.9;
+}
+.tile-name{
+	font-size: 1.3rem;
+}
+.tile-info{
+	font-size: 1rem;
+	margin-top: 10px;
+	font-weight: lighter;
+}
+.tile-modefab{
+	height: 60px;
+	width: 60px;
+	background-color: #446CB3;
+	position: absolute;
+	top: -60px;
+	right: -60px;
+	border-radius: 30px;
+	z-index: 400;
+	opacity: 0;
+	z-index: -100;
+}
+
+.darkcyan{
+	background-color: darkcyan;
+}
+.indianred{
+	background-color: indianred;
+}
+.olivedrab{
+	background-color: seagreen;
+}
+
+#site-id{
+	width: 100%;
+    height: 70px;
+	margin: 5px;
+	margin-bottom: 50px;
+	
+}
+#site-logo{
+    width:  70px;
+    height: 70px;
+    float: left;
+}
+#site-logo > img{
+    width: 230%;
+    height: 230%;
+    left: -20px;
+}
+#site-name{
+    font-size: 3rem;
+	color: rgb(100, 100, 100);
+    font-weight: bold;
+    float: left;
+    margin-left: 60px;
+}
+
+.icon-holder{
+	position: relative;
+	cursor: pointer;
+}
+.icon-holder > img{
+	position: absolute;
+	height: 30%;
+	width: 30%;
+	margin: auto;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+.game-menu-screen{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	transform: translateY(100%);
+	background-color: rgba(245, 245, 245, 0.95);
+	z-index: 200;
+	border-right: 1px solid rgb(200, 200, 200);
+}
+.game-screen{
+    position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+    transform: translateY(-100%);
+	background-color: rgba(245, 245, 245, 0.95);
+	z-index: 200;
+	border-right: 1px solid rgb(200, 200, 200);
+}
+#game-title{
+	text-align: center;
+	padding-top: 100px;
+	font-weight: bold;
+	font-size: 4rem;
+}
+#game-motiv{
+	margin-top: 20px;
+	text-align: center;
+	font-size: 2rem;
+	font-style: italic;
+	margin-bottom: 50px;
+}
+.game-menuh{
+	margin-top: 20px;
+	text-align: center;
+}
+.game-menuh > div{
+	display: inline-block;
+	height: 70px;
+	background-color: seagreen;
+	cursor: pointer;
+}
+.gmenu-icon{
+	width: 70px;
+	height: 70px;
+	float: left;
+}
+.gmenu-icon > img{
+	width: 45%;
+	height: 45%;
+}
+.gmenu-label{
+	float: left;
+	color: white;
+	margin-top: 20px;
+	padding: 0px 30px 0px 0px;
+}
+
+.animate2s{
+    -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+}
+.animate3s{
+    -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+         -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+.animate4s{
+    -webkit-transition: all 0.4s ease-in-out;
+       -moz-transition: all 0.4s ease-in-out;
+         -o-transition: all 0.4s ease-in-out;
+            transition: all 0.4s ease-in-out;
+}
+
+#full-ajax{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	transform: translateY(100%);
+	background-color: rgba(255, 255, 255, 0.95);
+	z-index: 200;
+}
+
+#form-left{
+	float: left;
+	width: 70%;
+	height: 100%;
+	padding: 5%;
+	box-sizing: border-box;
+	position: relative;
+}
+#form-right{
+	float: right;
+	width: 30%;
+	height: 100%;
+	border-left: 1px solid rgb(240, 240, 240);
+	background-color: rgb(245, 245, 245);
+	box-sizing: border-box;
+	padding: 10px;
+	overflow-y: auto;
+	position: relative;
+}
+.form-title{
+	font-size: 3rem;
+	font-weight: bold;
+	margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom-width: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+.form-title:focus{
+    border-bottom-color: darkcyan;
+}
+
+#question, #answer{
+	width: 100%;
+	height: 100px;
+	margin-top: 20px;
+	border: 1px dotted rgb(100, 100, 100);
+	padding: 10px 0px 0px 10px;
+	box-sizing: border-box;
+}
+#add, #cancel{
+	margin-top: 20px;
+	background-color: darkcyan;
+	color: white;
+	border: none;
+	padding: 15px 40px 15px 40px;
+	font-size: 1.2rem;
+}
+
+.viewport-x{
+	position: absolute;
+	height: 70px;
+	width: 70px;
+	background-color: white;
+	border-radius: 35px;
+	top: 20px;
+	border: 1px solid rgb(230, 230, 230);
+	right: 20px;
+}
+
+.question-card{
+	width: 100%;
+	background-color: white;
+	border: 1px solid rgb(230, 230, 230);
+	padding: 25px;
+	box-sizing: border-box;
+	font-size: 1.1rem;
+	line-height: 1.6em;
+	color: rgb(100, 100, 100);
+	margin-bottom: 10px;
+}
+
+#q-count{
+	font-weight: bold;
+	font-size: 1rem;
+	margin: 10px 0px 20px 5px;
+	color: rgb(120, 120, 120);
+}
+.q-actions{
+	margin-top: 10px;
+}
+.q-actions > input[type="button"]{
+	border: 0px;
+	padding: 10px 30px 10px 30px;
+	color: white;
+}
+.bottom-fab{
+	position: fixed;
+	height: 70px;
+	width: 70px;
+	border-radius: 35px;
+	background-color: seagreen;
+	bottom: 20px;
+	right: 20px;
+    
+}
+.edit{
+	background-color: darkcyan;
+}
+.delete{
+	background-color: indianred;
+}
+
+
+/* ================================================================ */
+	/* CSS Styles for Game Mode 1 */
+/* ================================================================= */
+
+#time, #score, #time2{
+	position: absolute;
+	padding: 30px;
+	margin: auto;
+	top: 20px;
+	font-size: 2.5rem;
+	color: white;
+}
+#time, #time2{
+	left: 20px;
+	background-color: seagreen;
+}
+#score{
+	left: 150px;
+	background-color: #FDE3A7;
+    color: rgb(100, 100, 100);
+}
+#check-banner, #check-banner2{
+    position: absolute;
+    bottom: 0px;
+    font-size: 3rem;
+    text-align: center;
+    width:  100%;
+    padding:  20px 0px 20px 0px;
+    opacity: 0.8;
+    color:  white;
+}
+.correct{
+    background-color: seagreen;
+}
+.wrong{
+    background-color: #D24D57;
+}
+#asked-question{
+	width: 85%;
+	padding-top: 180px;
+	margin: auto;
+	font-size: 3rem;
+	text-align: center;
+}
+#your-answer{
+	width: 80%;
+	margin: auto;
+	margin-top: 50px;
+	height: 50px;
+	display: block;
+	border: 1px dashed gray;
+	font-size: 20px;
+	text-align: center;
+	padding: 0px 10px 0px 10px;
+}
+.current-submit{
+	width: 300px;
+	height: 60px;
+	margin: auto;
+	display: block;
+	margin-top: 20px;
+	font-size: 1.3rem;
+	background-color: seagreen;
+	color: white;
+	border: none;
+}
+
+#game-over, #game-over2{
+    position: absolute;
+    margin: auto;
+    top:  0px;
+    bottom: 0px;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid indianred;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    transform: translateX(100%);
+}
+#game-over > #go, #game-over2 > #go{
+    margin-top: 60px;
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    
+}
+#stars, #stars2{
+    width: 100%;
+    text-align: center;
+}
+.star{
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    opacity: 0.8;
+}
+.star > img{
+    height: 70%;
+    width: 70%;
+}
+#stats, #stats2{
+    font-size: 1.9rem;
+    margin-top: 30px;
+    text-align: center;
+    
+}
+
+/* ================================================================ */
+	/*CSS Styles for Game Mode 2 */
+/* ================================================================= */
+
+.chat-person{
+    width: auto;
+    height: 80px;
+    overflow: hidden;
+}
+.chat-person:hover{
+    background-color: rgb(240, 240, 240);
+    cursor: pointer
+}
+#chat-list{
+    position: absolute;
+    height: 100%;
+    width:  100%;
+    overflow: auto;
+}
+#chat-list-header{
+    margin: auto;
+    padding: 30px 20px 30px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.chat-person-pic{
+    float: left;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    margin: 15px 0px 0px 30px;
+    background-color: rgb(200, 200, 200);
+}
+.chat-person-pic > img{
+    height: 50%;
+    width: 50%;
+}
+.chat-person-name{
+    float: left;
+    max-width: 70%;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.5em;
+    margin: 15px 0px 0px 20px;
+}
+.chat-info{
+    font-weight: lighter;
+    font-size: 0.8rem;
+}
+.chat-status{
+    position: absolute;
+    border: 2px solid white;
+    width: 18px;
+    height: 18px;
+    border-radius: 12px;
+    z-index: 10;
+    right: -5px;
+    top: -5px;
+}
+.online{
+    background-color: olivedrab;
+}
+.offline{
+    background-color: gray;
+}
+
+#match-screen{
+    //transform: translateY(-100%);
+}
+
+#container{
+    width: 840px;
+    height: auto;
+    overflow: auto;
+    margin: auto;
+    padding-top: 150px;
+    
+}
+.box, .box-clicked{
+    width: 200px;
+    height: 200px;
+    padding:  30px 20px 20px 20px;
+    box-sizing: border-box;
+    float: left;
+    font-size: 1.1rem;
+    margin: 5px;
+    text-align: center;
+    background-color: #1BA39C;
+    color: white;
+    cursor: pointer;
+}
+.box-clicked{
+    
+    opacity: 0.2;
+    background-color: #1BA39C;
+
+}
+.hbox{
+    background-color: gray;
+}

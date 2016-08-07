@@ -1,0 +1,6 @@
+﻿@using StudyCricket
+@using System.Web.Helpers
+@{
+   @Html.Raw(Json.Encode(Questions.GetQuestionsOfSet(Request.Params["setid"].AsInt(), true)));
+}
+

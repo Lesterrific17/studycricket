@@ -1,0 +1,16 @@
+@{
+    var setId = Request.Params["setid"].AsInt();
+}
+@using StudyCricket
+
+@{
+    <div id="q-count">@Questions.QuestionCount(setId) QUESTIONS</div>
+    foreach(var q in Questions.GetQuestionsOfSet(setId, false)){
+        
+		<div class="question-card">
+			<b>Question: </b>@q.question
+			<br/><br/>
+			<b>Answer: </b>@q.answer
+		</div>
+    }
+}

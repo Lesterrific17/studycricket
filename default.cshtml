@@ -1,0 +1,211 @@
+@using StudyCricket
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/script.js"></script>
+    <script src="~/js/site.js"></script>
+    <script src="~/js/websocket.js"></script>
+</head>
+
+<body>
+
+	<div id="site-content">
+		<div class="relatify">
+			<div id="user-content" style="background-image: url('img/coffee.jpg')">
+				<div id="ucontent-overlay">
+					<div id="site-id">
+                        <div id="site-logo" class="icon-holder">
+                            <img alt="logo" src="img/logo.png"/>
+                        </div>
+                        <div id="site-name">Study Cricket</div>
+                    </div>
+
+                    @{
+                        foreach(var s in StudyCricket.Questions.GetSets()){
+                            <div class="tile set" data-id="@s.id" data-name="@s.name">
+						        <div class="tile-name">@s.name</div>
+						        <div class="tile-info">@Questions.QuestionCount(s.id) Questions</div>
+					        </div>
+                        }
+                    }
+					
+					
+					<div id="plus-set" class="tile olivedrab icon-holder">
+						<img alt="icon" src="svg/plus.svg"/>
+					</div>
+
+				</div>
+
+				<!-- THIS IS THE DIV THAT WILL CONTAIN THE GAME MENU -->
+
+				<div id="game-menu-screen" class="game-menu-screen animate4s">
+					<div class="relatify">
+						<div data-viewname="game-menu-screen" data-value="100%" class="viewport-x icon-holder">
+							<img alt="icon" src="svg/x1.svg"/>
+						</div>
+						<div id="game-title">Philosophy Quiz</div>
+						<div id="game-motiv">You can do it!</div>
+						<div class="game-menuh">
+							<div class="game-menu" id="startmode1">
+								<div class="gmenu-icon icon-holder">
+									<img alt="icon" src="svg/timer.svg"/>
+								</div>
+								<div class="gmenu-label">Simple  Q & A w/ Timer</div>
+							</div>
+						</div>
+
+						<div class="game-menuh">
+							<div class="game-menu" id="startmode2">
+								<div class="gmenu-icon icon-holder">
+									<img alt="icon" src="svg/notimer.svg"/>
+								</div>
+								<div class="gmenu-label">Simple  Q & A w/o Timer</div>
+							</div>
+						</div>
+
+						<div class="game-menuh">
+							<div class="game-menu" id="startmode3">
+								<div class="gmenu-icon icon-holder">
+									<img alt="icon" src="svg/time-attack.svg"/>
+								</div>
+								<div class="gmenu-label">Matching Time Attack</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+                
+				<!--THIS IS THE DIV THAT WILL CONTAIN THE GAMEPLAY OF MODE 1 & 2-->
+                
+				<div id="game-screen" class="game-screen animate4s">
+					<div class="relatify">
+						<div data-viewname="game-screen" data-value="-100%" class="viewport-x icon-holder">
+							<img alt="icon" src="svg/x1.svg"/>
+						</div>
+						<div id="time">N/A</div>
+					    <div id="score">0</div>
+                        <div id="check-banner" class="hidden"></div>
+                        <div id="game-over" class="animate4s">
+                            <div id="go">Game Over</div>
+                            <div id="stars">
+                                
+                            </div>
+                            <div id="stats"></div>
+                        </div>
+						<div id="asked-question">
+							This is the current question.
+						</div>
+						<input type="text" id="your-answer" autofocus="true"/>
+						<input type="button" value="Submit" id="submit-answer" class="current-submit"/>
+					</div>
+				</div>
+               
+                <div id="match-screen" class="game-screen animate4s">
+                    <div class="relatify">
+                    
+                        <div data-viewname="match-screen" data-value="-100%" class="viewport-x icon-holder">
+						    <img alt="icon" src="svg/x1.svg"/>
+					    </div>
+					    <div id="time2">N/A</div>
+					    <div id="score">0</div>
+                        <div id="check-banner2" class="hidden">answer validation</div>
+
+                        <div id="game-over2" class="animate4s">
+                            <div id="go">Game Over</div>
+                            <div id="stars2">
+                                
+                            </div>
+                            <div id="stats2"></div>
+                        </div>
+
+                        <div id="container"></div>
+                    </div>
+                    
+
+                </div>
+
+			</div>
+
+            
+
+			<div id="mp-sidebar">
+                <div id="chat-list">
+                    <div id="chat-list-header">YOUR STUDY BUDDIES</div>
+                    <div class="chat-person animate2s">
+                        <div class="chat-person-pic icon-holder">
+                            <div class="chat-status online"></div>
+                            <img alt="icon" src="svg/profile.svg"/>
+                        </div>
+                        <div class="chat-person-name">Rubelito Abella
+                        <br/><span class="chat-info">5 Question Sets made </span>
+                        </div>
+                    </div>
+                    <div class="chat-person animate2s">
+                        <div class="chat-person-pic icon-holder">
+                            <div class="chat-status online"></div>
+                            <img alt="icon" src="svg/profile.svg"/>
+                        </div>
+                        <div class="chat-person-name">Japheth Balane
+                        <br/><span class="chat-info">7 Question Sets made </span>
+                        </div>
+                    </div>
+                    <div class="chat-person animate2s">
+                        <div class="chat-person-pic icon-holder">
+                            <div class="chat-status offline"></div>
+                            <img alt="icon" src="svg/profile.svg"/>
+                        </div>
+                        <div class="chat-person-name">Czarina Rae
+                        <br/><span class="chat-info">12 Question Sets made </span>
+                        </div>
+                    </div>
+                    <div class="chat-person animate2s">
+                        <div class="chat-person-pic icon-holder">
+                            <div class="chat-status offline"></div>
+                            <img alt="icon" src="svg/profile.svg"/>
+                        </div>
+                        <div class="chat-person-name">Deneir "Putsop" Uyax
+                        <br/><span class="chat-info">9 Question Sets made </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="questions-ajax" class="animate4s">
+                    
+                </div>
+            </div>
+
+
+			<!-- THIS IS THE GAME THAT WILL CONTAIN THE INPUT FORM TO MAKE QUIZZES -->
+			<div id="full-ajax" class="animate4s">
+				<div class="relatify">
+					
+					<div id="form-left">
+						<div data-viewname="full-ajax" data-value="100%" class="viewport-x icon-holder">
+							<img alt="icon" src="svg/x1.svg"/>
+						</div>
+						<div class="form-title animate3s" id="set-title" contenteditable="">Question Set Title Here</div>
+						<textarea id="question" rows="10" cols="10" placeholder="Question"></textarea>
+						<textarea id="answer" rows="10" cols="10" placeholder="Answer"></textarea>
+						<input type="button" id="add" value="Add"/>
+                        <input type="button" id="cancel" class="hidden" value="Cancel"/>
+					</div>
+					<div id="form-right">
+						<div id="q-count"><b id="qcount">0</b> QUESTION(S) ADDED</div>
+                        <div id="questions-list"></div>
+						<div id="save-set" class="hidden bottom-fab icon-holder">
+							<img alt="icon" src="svg/save.svg"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+
+</html>

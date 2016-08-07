@@ -1,0 +1,7 @@
+﻿@using StudyCricket
+@{
+    var data = Request.Params["data"];
+    var title = Request.Params["title"];
+    
+    Questions.SaveSet(title, data);
+}
